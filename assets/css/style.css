@@ -83,7 +83,7 @@ form h2 {
 
 /* .form-field input[type="checkbox"] { */
 #bfast, #lunch, .vitamins {
-    margin: 1px 3px 5px 16px;
+    margin: 2px 3px 4px 16px;
 }
 
 .btn-box {
@@ -106,3 +106,23 @@ form h2 {
     background-color: var(--pink);
 }
 
+#dayCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 40px 0;
+}
+
+.card {
+    border: 2px solid var(--green);
+    padding: 16px;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card h3 {
+    color: var(--green);
+    font-family: 'Berkshire Swash', sans-serif;
+    text-align: center;
+}
