@@ -116,13 +116,52 @@ form h2 {
 
 .card {
     border: 2px solid var(--green);
-    padding: 16px;
+    padding: 0;
     border-radius: 5px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .card h3 {
-    color: var(--green);
+    background-color: var(--green);
+    color: white;
     font-family: 'Berkshire Swash', sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 12px;
+}
+
+.card-body {
+    padding: 16px 16px 32px 16px;
+}
+
+.card-body p, .vit-row {
+    font-weight: 600;
+}
+
+.card-body p span {
+    font-weight: 300;
+}
+
+.card-body p i {
+    color: var(--pink);
+    padding-left: 8px;
+}
+
+.vit-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.pill-svg {
+    display: flex;
+    flex-direction: row;
+}
+
+.pill-svg i {
+    padding: 0 8px;
+    color: var(--pink);
+}
+
+.fa-1x {
+    font-size: 1.3em;
 }

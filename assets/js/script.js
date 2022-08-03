@@ -110,20 +110,53 @@ const displayData = () => {
 const template = (day) => {
     return `<div class="card" style="width: 18rem;">
     <h3>${day.date}</h3>
-    <p>Breakfast Shake ${day.bfast}</p>
-    <p>AM Snack: <span>${day.amsnack}</span></p>
-    <p>Lunch Shake ${day.lunch}</p>
-    <p>PM Snack: <span>${day.pmsnack}</span></p>
-    <p>Dinner</p>
-    <p>${day.dinner}</p>
-    <p>
-        Vitamins
-        <span>${day.vit1}</span>
-        <span>${day.vit2}</span>
-        <span>${day.vit3}</span>
-        <span>${day.vit4}</span>
-    </p>
+    <div class="card-body">
+        <p>Breakfast Shake: ${bfastCheck(day.bfast)}</p>
+        <p>AM Snack: &nbsp; <span>${day.amsnack}</span></p>
+        <p>Lunch Shake: ${lunchCheck(day.lunch)}</p>
+        <p>PM Snack: &nbsp; <span>${day.pmsnack}</span></p>
+        <p>Dinner: &nbsp; <span>${day.dinner}</span></p>
+        <div class="vit-row">
+            Vitamins: &nbsp; 
+            <div class='pill-svg'>
+                ${pillz(day.vit1, day.vit2, day.vit3, day.vit4)}
+            </div>
+        </div>
+    </div>
 </div>`
+}
+
+const bfastCheck = (breakfast) => {
+    if (breakfast === true) {
+        return `<i class="fa-solid fa-circle-check"></i>`
+    } else {
+        return `<i class="fa-regular fa-circle"></i>`
+    }
+}
+
+const lunchCheck = (lun) => {
+    if (lun === true) {
+        return `<i class="fa-solid fa-circle-check"></i>`
+    } else {
+        return `<i class="fa-regular fa-circle"></i>`
+    }
+}
+
+const pillz = (vit1, vit2, vit3, vit4) => {
+
+    let vits = [vit1, vit2, vit3, vit4];
+    let HTML = [];
+
+    vits.forEach((vit) => {
+        if (vit === true) {
+            let vitHTML = `<i class="fa-solid fa-capsules fa-1x"></i>`
+          HTML.push(vitHTML);
+        } 
+    })
+
+    return HTML.join('');
+
+
 }
 
 displayData();
